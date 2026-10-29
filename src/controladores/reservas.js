@@ -48,6 +48,15 @@ function crearControladorReservas(servicio) {
     const reserva = await servicio.crear(req.reservaValidada);
     res.location(`/api/reservas/${reserva.id}`).status(201).json(reserva);
   }
+
+  async function eliminarApi(req, res) {
+    const eliminado = await servicio.eliminar(req.params.id);
+    if (!eliminado) {
+      return res.status(404).json({ error: "Recurso no encontrado." });
+    }
+    res.status(204).end();
+  }
+
   return {
     listar,
     mostrarFormulario,
@@ -56,6 +65,7 @@ function crearControladorReservas(servicio) {
     listarApi,
     obtenerApi,
     crearApi,
+    eliminarApi,
   };
 }
 module.exports = { crearControladorReservas };
