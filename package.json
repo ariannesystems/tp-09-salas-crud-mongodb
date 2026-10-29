@@ -13,7 +13,7 @@
     "check": "npm run format:check && npm run lint"
   },
   "keywords": [],
-  "author": "",
+  "author": "Pablo David Maltese",
   "license": "ISC",
   "dependencies": {
     "ejs": "^6.0.1",

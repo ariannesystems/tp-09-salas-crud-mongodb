@@ -68,6 +68,17 @@ function crearControladorReservas(servicio) {
     res.json(reserva);
   }
 
+  async function actualizarApi(req, res) {
+    const reserva = await servicio.actualizar(
+      req.params.id,
+      req.cambiosValidos,
+    );
+    if (!reserva) {
+      return res.status(404).json({ error: "Recurso no encontrado." });
+    }
+    res.json(reserva);
+  }
+
   return {
     listar,
     mostrarFormulario,
@@ -78,6 +89,7 @@ function crearControladorReservas(servicio) {
     crearApi,
     eliminarApi,
     reemplazarApi,
+    actualizarApi,
   };
 }
 module.exports = { crearControladorReservas };

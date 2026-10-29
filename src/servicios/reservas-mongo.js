@@ -69,7 +69,7 @@ function crearServicioReservasMongo() {
   async function actualizar(id, datos) {
     comprobarId(id);
     const cambios = {};
-    for (const campo of ["sala", "fecha", "turno", "personas", "estado"]) {
+    for (const campo of ["personas", "estado"]) {
       if (Object.hasOwn(datos, campo)) cambios[campo] = datos[campo];
     }
 
