@@ -151,18 +151,18 @@ Recorrido mínimo recomendado:
 
 ## Matriz de pruebas observadas
 
-| Prueba                         | Resultado observado                                  | Evidencia                   |
-| ------------------------------ | ---------------------------------------------------- | --------------------------- |
-| POST válido                    | Aprobado: `201`, `Location` y estado `pendiente`.    | Respuesta de Postman        |
-| PUT completo                   | Aprobado: `200` y mismo ID.                          | Respuesta de Postman        |
-| PUT incompleto                 | Aprobado: `400`, sin modificar la reserva.           | Respuesta de Postman        |
-| PATCH válido                   | Aprobado: `200`; los campos omitidos se conservaron. | Respuesta de Postman        |
-| Validaciones inválidas         | Aprobado: `400`, sin cambios en los datos.           | Respuestas de Postman       |
-| ID mal formado y ID ausente    | Aprobado: `400` y `404`, respectivamente.            | Respuestas de Postman       |
-| DELETE existente               | Aprobado: `204`, sin cuerpo de respuesta.            | Respuesta de Postman        |
-| Segundo DELETE y GET posterior | Aprobado: `404` en ambos casos.                      | Respuestas de Postman       |
-| Sitio, formulario y `/estado`  | Aprobado: funcionamiento correcto.                   | Capturas del navegador      |
-| Error inesperado               | Aprobado: `500` sin exponer información sensible.    | Evidencia de prueba aislada |
+| Prueba                         | Resultado observado                                  | Evidencia              |
+| ------------------------------ | ---------------------------------------------------- | ---------------------- |
+| POST válido                    | Aprobado: `201`, `Location` y estado `pendiente`.    | Respuesta de Postman   |
+| PUT completo                   | Aprobado: `200` y mismo ID.                          | Respuesta de Postman   |
+| PUT incompleto                 | Aprobado: `400`, sin modificar la reserva.           | Respuesta de Postman   |
+| PATCH válido                   | Aprobado: `200`; los campos omitidos se conservaron. | Respuesta de Postman   |
+| Validaciones inválidas         | Aprobado: `400`, sin cambios en los datos.           | Respuestas de Postman  |
+| ID mal formado y ID ausente    | Aprobado: `400` y `404`, respectivamente.            | Respuestas de Postman  |
+| DELETE existente               | Aprobado: `204`, sin cuerpo de respuesta.            | Respuesta de Postman   |
+| Segundo DELETE y GET posterior | Aprobado: `404` en ambos casos.                      | Respuestas de Postman  |
+| Sitio, formulario y `/estado`  | Aprobado: funcionamiento correcto.                   | Capturas del navegador |
+| Error inesperado               | Nada: `500` no realizado.                            | No realizado           |
 
 ## Persistencia y criterio de borrado
 
