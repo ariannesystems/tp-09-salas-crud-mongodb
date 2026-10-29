@@ -19,7 +19,7 @@ const reservaSchema = new mongoose.Schema(
     },
     personas: { type: Number, required: true, min: 1, max: 6 },
     estado: {
-      type: String,
+      type: Boolean,
       required: true,
       enum: ["pendiente", "confirmada"],
       default: "pendiente",

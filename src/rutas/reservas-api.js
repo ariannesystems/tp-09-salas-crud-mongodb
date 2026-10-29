@@ -1,5 +1,6 @@
 const express = require("express");
 const { validarReservas } = require("../middleware/reservas");
+const { validarReemplazoReserva} = require("../middleware/cambios-reservas");
 
 function crearRouterReservasApi(controlador) {
   const router = express.Router();
@@ -8,6 +9,8 @@ function crearRouterReservasApi(controlador) {
   router.get("/:id", controlador.obtenerApi);
   router.post("/", validarReservas, controlador.crearApi);
   router.delete("/:id", controlador.eliminarApi);
+  router.put( "/:id", validarReservas, validarReemplazoReserva, controlador.reemplazarApi, );
+
   return router;
 }
 module.exports = { crearRouterReservasApi };
